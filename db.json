@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "department": "Engineering"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "position": "Product Manager",
+      "department": "Product"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "position": "UX Designer",
+      "department": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Bob Brown",
+      "position": "Data Analyst",
+      "department": "Data"
+    },
+    {
+      "id": 5,
+      "name": "Charlie Davis",
+      "position": "Marketing Specialist",
+      "department": "Marketing"
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "title": "Kursi Gaming",
+      "slug": "kursi-gaming",
+      "Description": "Ini adalah kursi gaming terbaik 2026"
+    },
+    {
+      "id": 2,
+      "title": "Bantal Tidur",
+      "slug": "bantal-tidur",
+      "Description": "Ini adalah bantal tidur terbaik 2026"
+    }
+  ]
+}
