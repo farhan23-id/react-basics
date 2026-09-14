@@ -3,6 +3,8 @@ import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import ProductDetail from "./pages/ProductDetil.tsx";
 import Products from "./pages/Products.tsx";
+import Form from "./pages/Form.tsx";
+import RHFPage from "./pages/RHFPage.tsx";
 
 const App = () => {
   return (
@@ -13,9 +15,12 @@ const App = () => {
 
         {/* Dynamic Page */}
         <Route path="/product/:productSlug" element={<ProductDetail />} />
-
         {/* query params implementation */}
         <Route path="/products" element={<Products />} />
+
+        {/* Form Handling */}
+        <Route path="/form" element={<Form />} />
+        <Route path="/rhf" element={<RHFPage />} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>

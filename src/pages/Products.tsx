@@ -49,7 +49,7 @@ const Products = () => {
       <div>
         <h3>Try to change the values</h3>
         <div style={{ display: "flex", gap: "4px" }}>
-          <p>Change sort value to</p>
+          <p>Change name value to</p>
           <button onClick={() => handleNameValueChange("monitor")}>
             monitor
           </button>
