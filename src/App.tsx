@@ -5,6 +5,7 @@ import ProductDetail from "./pages/ProductDetil.tsx";
 import Products from "./pages/Products.tsx";
 import Form from "./pages/Form.tsx";
 import RHFPage from "./pages/RHFPage.tsx";
+import ReduxTest from "./pages/ReduxTest.tsx";
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
         {/* Form Handling */}
         <Route path="/form" element={<Form />} />
         <Route path="/rhf" element={<RHFPage />} />
+
+        {/* state management with redux */}
+        <Route path="/redux" element={<ReduxTest />} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
