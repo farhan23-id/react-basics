@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -17,6 +17,9 @@ const registerFormSchema = z
       }) // Minimal 2 huruf kapital dengan posisi acak
       .regex(/[0-9]/, { message: "Harus menggunakan minimal 1 angka" }),
     confirmPassword: z.string(),
+    gender: z.enum(["male", "female"]),
+    isWorking: z.boolean(),
+    isPregnant: z.boolean(),
     age: z.coerce.number().min(18, { message: "Usia minimal 18 tahun" }),
     dob: z.coerce.date().max(new Date()).optional(),
   })
@@ -39,6 +42,11 @@ const RHFPage = () => {
 
   const form = useForm<RegisterFormInput, unknown, RegisterFormOutput>({
     resolver: zodResolver(registerFormSchema),
+  });
+
+  const gender = useWatch({
+    control: form.control,
+    name: "gender",
   });
 
   // You can also destructure the form
@@ -108,6 +116,27 @@ const RHFPage = () => {
           />
           Show Password
         </label>
+
+        <label>
+          <select {...form.register("gender")}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+
+        <div>
+          <label>
+            Working?
+            <input type="checkbox" {...form.register("isWorking")} />
+          </label>
+
+          {gender === "female" ? (
+            <label>
+              Pregnant?
+              <input type="checkbox" {...form.register("isPregnant")} />
+            </label>
+          ) : null}
+        </div>
 
         <span style={{ color: "red" }}>
           {form.formState.errors.age?.message}
